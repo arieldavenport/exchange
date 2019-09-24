@@ -1,0 +1,2 @@
+#Grant admin full access in Exchange Online
+Get-Mailbox -ResultSize unlimited -Filter {(RecipientTypeDetails -eq 'UserMailbox') -and (Alias -ne 'Admin')} | Add-MailboxPermission -User svcadmin@endbs.com -AccessRights FullAccess -InheritanceType All -AutoMapping:$false
